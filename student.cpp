@@ -1,6 +1,8 @@
 #include <iostream>
 #include "student.h"
 #include "degree.h"
+#include <iostream>
+#include <sstream>
 
 using namespace std;
 
