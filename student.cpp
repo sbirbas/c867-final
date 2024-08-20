@@ -32,7 +32,9 @@ void Student::setLastName(string lastName){ this->lastName = lastName; }
 void Student::setEmail(string email){ this->email = email; }
 void Student::setAge(int age){ this->age = age; }
 void Student::setDaysInCourse(int daysInCourse[]){ for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i]; }
-void DegreeProgram Student::getDegreeProgram() { return degreeProgram; }
+void Student::setDegreeProgram(DegreeProgram degreeProgram) {
+    this->degreeProgram = degreeProgram;
+}
 
 //display student details
 
