@@ -13,7 +13,6 @@ int main()
     cout << "Name: Sophia Birbas" << endl;
     cout << endl;
 
-    // Student data input
     const string studentData[] = {
         "A1,John,Smith,John1989@gmail.com,20,30,35,40,SECURITY",
         "A2,Suzan,Erickson,Erickson_1990@gmail.com,19,50,30,40,NETWORK",
@@ -21,11 +20,11 @@ int main()
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Sophia,Birbas,sbirbas@wgu.edu,20,20,30,40,SOFTWARE"};
 
-    // Create an instance of the Roster class
+    // create an instance of the Roster class
     const int numStudents = sizeof(studentData) / sizeof(studentData[0]);
     Roster classRoster;
 
-    // 3. Add each student to classRoster
+    //add each student to classRoster
     for (int i = 0; i < numStudents; ++i)
     {
         stringstream ss(studentData[i]);
@@ -47,26 +46,25 @@ int main()
         classRoster.add(data[0], data[1], data[2], data[3], stoi(data[4]), daysInCourse, degreeProgram);
     }
 
-    // Print all students
+    // print all students
     classRoster.printAll();
 
-    // Print invalid emails
+    // print invalid emails
     classRoster.printInvalidEmails();
 
-    // Print average days in course for each student
+    // print average days in course for each student
     for (int i = 0; i < numStudents; ++i)
     {
-        string studentID = classRoster.classRoster[i]->getStudentID();
+        string studentID = classRoster.classRosterArray[i]->getStudentID();
         classRoster.printAverageDaysInCourse(studentID);
     }
 
-    // Print students by degree program
+    // print students by degree program
     classRoster.printByDegreeProgram(SOFTWARE);
 
-    // Remove a student and try to remove again to demonstrate error handling
-    classRoster.remove("A3");
+
     classRoster.printAll();
-    classRoster.remove("A3"); // This should print an error message
+    classRoster.remove("A3");
 
     return 0;
 }

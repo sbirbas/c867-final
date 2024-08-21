@@ -2,17 +2,18 @@
 #include <string>
 
 class Roster {
-    private:
-    Student* classRosterArray[5];
-    int lastIndex;
+private:
+    int index;
 
-    public:
+public:
+    Student* classRosterArray[5];
+
     Roster();
     ~Roster();
 
-    //functions for adding, removing, and printing students
-    void add(string studentID, string firstName, string lastName, string email, int age, int daysInCourse[], DegreeProgram degreeProgram);
-    void remove(string studentID);
+    //functions for parsing, adding, removing, and printing students
+    void parseAndAdd(string studentData);
+    void add(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, const int daysInCourse[], DegreeProgram degreeProgram);    void remove(string studentID);
     void printAll();
     void printAverageDaysInCourse(string studentID);
     void printInvalidEmails();
